@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZJU-WZP</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #000;
+      color: #fff;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .page {
+      min-height: 100vh;
+      background: #000;
+      padding: 24px 16px 48px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 760px;
+      border-radius: 32px;
+      overflow: hidden;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.18) 32%, rgba(0,0,0,0.84) 72%, #000 100%),
+        url('images/profile-bg.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 36px 24px 72px;
+      text-align: center;
+    }
+
+    .avatar-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(6px);
+      font-size: 26px;
+    }
+
+    .hero-content {
+      max-width: 640px;
+    }
+
+    .name {
+      font-size: clamp(44px, 8vw, 76px);
+      line-height: 1;
+      font-weight: 800;
+      margin: 0 0 10px;
+      letter-spacing: -0.03em;
+    }
+
+    .handle {
+      font-size: clamp(20px, 3vw, 30px);
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 28px;
+      font-weight: 600;
+    }
+
+    .icon-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .icon-link {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.32);
+      transition: transform 0.18s ease, opacity 0.18s ease;
+    }
+
+    .icon-link:hover {
+      transform: translateY(-3px) scale(1.03);
+      opacity: 0.95;
+    }
+
+    .ig { background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 10%, #fd5949 35%, #d6249f 62%, #285AEB 100%); }
+    .gh { background: #171515; }
+    .x { background: #111; }
+    .bili { background: #27a6ff; }
+    .yt { background: #ff1f1f; }
+    .tg { background: #2aabee; }
+
+    .hero-text {
+      font-size: 22px;
+      color: rgba(255,255,255,0.92);
+      letter-spacing: 0.01em;
+      margin: 0;
+    }
+
+    .section {
+      margin-top: 26px;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #111;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.28);
+    }
+
+    .card-image {
+      position: relative;
+      min-height: 420px;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.08), rgba(0,0,0,0.58)),
+        url('images/school.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      padding: 30px;
+    }
+
+    .badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(6px);
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .card-title {
+      font-size: clamp(30px, 4vw, 46px);
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .about {
+      padding: 28px 26px 34px;
+      background: #0a0a0a;
+    }
+
+    .about h2 {
+      font-size: 26px;
+      margin: 0 0 14px;
+    }
+
+    .about p {
+      margin: 0;
+      color: rgba(255,255,255,0.84);
+      font-size: 19px;
+      line-height: 1.8;
+    }
+
+    .footer-space { height: 24px; }
+
+    @media (max-width: 640px) {
+      .page { padding: 10px 10px 34px; }
+      .hero { min-height: 640px; padding: 26px 16px 56px; border-radius: 24px; }
+      .icon-link { width: 58px; height: 58px; font-size: 22px; }
+      .hero-text { font-size: 18px; }
+      .card-image { min-height: 320px; padding: 20px; }
+      .about { padding: 22px 18px 28px; }
+      .about p { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="container">
+      <section class="hero">
+        <div class="avatar-btn">👤</div>
+        <div class="hero-content">
+          <h1 class="name">ZiPeng Wang</h1>
+          <div class="handle">@zjuwzp</div>
+
+          <div class="icon-row">
+            <a class="icon-link ig" href="https://instagram.com/your_instagram" target="_blank" aria-label="Instagram">IG</a>
+            <a class="icon-link gh" href="https://github.com/ZJU-WZP" target="_blank" aria-label="GitHub">GH</a>
+            <a class="icon-link x" href="https://x.com/your_x" target="_blank" aria-label="X">X</a>
+            <a class="icon-link bili" href="https://space.bilibili.com/your_bilibili" target="_blank" aria-label="Bilibili">B</a>
+            <a class="icon-link yt" href="https://youtube.com/@your_youtube" target="_blank" aria-label="YouTube">YT</a>
+            <a class="icon-link tg" href="https://t.me/your_telegram" target="_blank" aria-label="Telegram">TG</a>
+          </div>
+
+          <p class="hero-text">Welcome to my page ✨</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="card-image">
+          <div class="badge">🎓 Student profile</div>
+          <h2 class="card-title">About My University Life</h2>
+        </div>
+        <div class="about">
+          <h2>Hello!</h2>
+          <p>
+            My name is ZiPeng Wang. I am an IBI1 student at the Zhejiang University – University of Edinburgh Institute (ZJE).
+            This page is a simple personal hub where you can find my social platforms, learn a little about my studies,
+            and see a glimpse of my university life.
+          </p>
+        </div>
+      </section>
+
+      <div class="footer-space"></div>
+    </div>
+  </div>
+</body>
+</html>
